@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Pacifico&display=swap');
+
+$bodyText: 'Open Sans', sans-serif;
+$primaryColor: #101820FF;
+$secondaryColor: #F2AA4CFF;
+$white: #fff;
+$lightGray: #f2f2f2;
+$font: 16px;
+$transition: .3s ease;
+$borderRadius: 5px;
+$boxShadow: 0 5px 15px lightgray;
+$marginTop: 30px;
+
+@mixin btn-black {
+    padding: 20px;
+    font-size: 1.1rem;
+    border-radius: $borderRadius;
+    margin: 10px 0;
+    border: none;
+    background: $primaryColor;
+    color: $white;
+}
+@mixin btn-black-hover {
+    cursor: pointer;
+    background: $secondaryColor;
+    color: $primaryColor;
+    transition: $transition;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $bodyText;
+    color: $primaryColor;
+    font-size: $font;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0;
+    background-attachment: fixed;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+/*******************
+nav
+*******************/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    .logo {
+        background: $secondaryColor;
+        padding: 5px 20px;
+        border-radius: $borderRadius;
+        text-decoration: none;
+        font-family: 'Pacifico', cursive;
+        font-size: 2rem;
+        &:hover {
+            opacity: .9;
+            transition: $transition;
+        }
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: $primaryColor;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            &:hover {
+                color: $secondaryColor;
+                transition: $transition;
+            }
+        }
+    }
+}
+/*******************
+footer
+*******************/
+footer {
+    margin-top: $marginTop;
+    .container {
+        background: $secondaryColor;
+        opacity: 0.9;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: $boxShadow;
+        flex-wrap: wrap;
+        .col:first-child {
+            flex: 2;
+            p {
+                padding-right: 50px;
+            }
+        }
+        .col:nth-child(2) {
+            flex: 1;
+            ul {
+                list-style: none;
+                a {
+                  color: $primaryColor;  
+                }
+            }
+        }
+        .col:last-child {
+           flex: 1; 
+            a{
+                color: $primaryColor;
+                font-size: 2rem;
+                margin-right: 10px;
+                &:hover {
+                    opacity: .8;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+    hr {
+        width: 100px;
+        margin: 20px 0;
+        border: none;
+        background: $primaryColor;
+        height: 1px;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+/*******************
+header
+*******************/
+header {
+    background: $white;
+    display: flex;
+    padding: 50px;
+    box-shadow: $boxShadow;
+    flex-wrap: wrap;
+    .col:first-child {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h1 {
+            font-size: 4rem;
+        }
+        h3 {
+            font-size: 1.7rem;
+            font-weight: 300;
+        }
+    }
+    .col:last-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        button:nth-child(1) {
+            @include btn-black;
+            &:hover {
+                @include btn-black-hover
+            }
+        }
+        button:nth-child(2) {
+            @include btn-black;
+            color: $primaryColor;
+            background: $secondaryColor;
+            &:hover {
+                @include btn-black-hover;
+                    color: $white;
+                    background: $primaryColor;
+            }
+        }
+    }
+}
+
+/*******************
+posts
+*******************/
+.posts {
+    display: flex;
+    margin-top: $marginTop;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .col {
+        flex: 0 0 31%;
+        box-shadow: $boxShadow;
+        img {
+            width: 100%;
+        }
+        .text {
+            padding: 30px;
+            background: $white;
+            text-align: center;
+            position: relative;
+            top: -5px;
+            opacity: .9;
+            h3 {
+                font-size: 2rem;
+            }
+            hr {
+                margin: 20px 0;
+            }
+            p {
+                text-align: justify;
+            }
+            button {
+            @include btn-black;
+            &:hover {
+                @include btn-black-hover
+            }
+        }
+        }
+    }
+}
+
+/*******************
+rightSidebar
+*******************/
+.rightSidebar {
+    display: flex;
+    flex-wrap: wrap;
+    article {
+        flex: 2;
+        img {
+            width: 100%;
+        }
+        .text {
+            background: $white;
+            padding: 30px;
+            opacity: .9;
+            h2 {
+                font-size: 3rem;
+            }
+            hr {
+                margin: 20px 0;
+            }
+            p {
+                text-align: justify;
+            }
+        }
+    }
+    aside {
+        flex: 1;
+        padding-left: 50px;
+        hr {
+            margin: 20px 0;
+        }
+        ul {
+            list-style: none;
+            background: $white;
+            padding: 30px;
+            opacity: .9;
+            line-height: 2;
+            a {
+                font-size: 1.2rem;
+                color: $primaryColor;
+            }
+        }
+    }
+}
+
+/*******************
+kontakt
+*******************/
+.kontakt {
+    form {
+        display: flex;
+        flex-direction: column;
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid $secondaryColor;
+            font-size: 1.1rem;
+            opacity: .9;
+        }
+        textarea {
+            @extend input;
+        }
+        ::placeholder {
+            font-family: $bodyText;
+        }
+         button {
+            @include btn-black;
+            &:hover {
+                @include btn-black-hover;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

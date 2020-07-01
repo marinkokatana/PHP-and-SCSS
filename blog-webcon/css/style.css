@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #101820FF;
+  font-size: 16px;
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 50px 0;
+  background-attachment: fixed; }
+
+.container {
+  width: 80%;
+  margin: auto; }
+
+/*******************
+nav
+*******************/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px; }
+  nav .logo {
+    background: #F2AA4CFF;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem; }
+    nav .logo:hover {
+      opacity: .9;
+      transition: 0.3s ease; }
+  nav ul {
+    display: flex;
+    list-style: none; }
+    nav ul a {
+      margin-left: 40px;
+      text-decoration: none;
+      color: #101820FF;
+      text-transform: uppercase;
+      font-size: 1.2rem; }
+      nav ul a:hover {
+        color: #F2AA4CFF;
+        transition: 0.3s ease; }
+
+/*******************
+footer
+*******************/
+footer {
+  margin-top: 30px; }
+  footer .container {
+    background: #F2AA4CFF;
+    opacity: 0.9;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px lightgray;
+    flex-wrap: wrap; }
+    footer .container .col:first-child {
+      flex: 2; }
+      footer .container .col:first-child p {
+        padding-right: 50px; }
+    footer .container .col:nth-child(2) {
+      flex: 1; }
+      footer .container .col:nth-child(2) ul {
+        list-style: none; }
+        footer .container .col:nth-child(2) ul a {
+          color: #101820FF; }
+    footer .container .col:last-child {
+      flex: 1; }
+      footer .container .col:last-child a {
+        color: #101820FF;
+        font-size: 2rem;
+        margin-right: 10px; }
+        footer .container .col:last-child a:hover {
+          opacity: .8;
+          transition: 0.3s ease; }
+  footer hr {
+    width: 100px;
+    margin: 20px 0;
+    border: none;
+    background: #101820FF;
+    height: 1px; }
+  footer h3 {
+    font-size: 2rem; }
+
+/*******************
+header
+*******************/
+header {
+  background: #fff;
+  display: flex;
+  padding: 50px;
+  box-shadow: 0 5px 15px lightgray;
+  flex-wrap: wrap; }
+  header .col:first-child {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    header .col:first-child h1 {
+      font-size: 4rem; }
+    header .col:first-child h3 {
+      font-size: 1.7rem;
+      font-weight: 300; }
+  header .col:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    header .col:last-child button:nth-child(1) {
+      padding: 20px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      margin: 10px 0;
+      border: none;
+      background: #101820FF;
+      color: #fff; }
+      header .col:last-child button:nth-child(1):hover {
+        cursor: pointer;
+        background: #F2AA4CFF;
+        color: #101820FF;
+        transition: 0.3s ease; }
+    header .col:last-child button:nth-child(2) {
+      padding: 20px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      margin: 10px 0;
+      border: none;
+      background: #101820FF;
+      color: #fff;
+      color: #101820FF;
+      background: #F2AA4CFF; }
+      header .col:last-child button:nth-child(2):hover {
+        cursor: pointer;
+        background: #F2AA4CFF;
+        color: #101820FF;
+        transition: 0.3s ease;
+        color: #fff;
+        background: #101820FF; }
+
+/*******************
+posts
+*******************/
+.posts {
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .posts .col {
+    flex: 0 0 31%;
+    box-shadow: 0 5px 15px lightgray; }
+    .posts .col img {
+      width: 100%; }
+    .posts .col .text {
+      padding: 30px;
+      background: #fff;
+      text-align: center;
+      position: relative;
+      top: -5px;
+      opacity: .9; }
+      .posts .col .text h3 {
+        font-size: 2rem; }
+      .posts .col .text hr {
+        margin: 20px 0; }
+      .posts .col .text p {
+        text-align: justify; }
+      .posts .col .text button {
+        padding: 20px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        margin: 10px 0;
+        border: none;
+        background: #101820FF;
+        color: #fff; }
+        .posts .col .text button:hover {
+          cursor: pointer;
+          background: #F2AA4CFF;
+          color: #101820FF;
+          transition: 0.3s ease; }
+
+/*******************
+rightSidebar
+*******************/
+.rightSidebar {
+  display: flex;
+  flex-wrap: wrap; }
+  .rightSidebar article {
+    flex: 2; }
+    .rightSidebar article img {
+      width: 100%; }
+    .rightSidebar article .text {
+      background: #fff;
+      padding: 30px;
+      opacity: .9; }
+      .rightSidebar article .text h2 {
+        font-size: 3rem; }
+      .rightSidebar article .text hr {
+        margin: 20px 0; }
+      .rightSidebar article .text p {
+        text-align: justify; }
+  .rightSidebar aside {
+    flex: 1;
+    padding-left: 50px; }
+    .rightSidebar aside hr {
+      margin: 20px 0; }
+    .rightSidebar aside ul {
+      list-style: none;
+      background: #fff;
+      padding: 30px;
+      opacity: .9;
+      line-height: 2; }
+      .rightSidebar aside ul a {
+        font-size: 1.2rem;
+        color: #101820FF; }
+
+/*******************
+kontakt
+*******************/
+.kontakt form {
+  display: flex;
+  flex-direction: column; }
+  .kontakt form input, .kontakt form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #F2AA4CFF;
+    font-size: 1.1rem;
+    opacity: .9; }
+  .kontakt form ::placeholder {
+    font-family: "Open Sans", sans-serif; }
+  .kontakt form button {
+    padding: 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: none;
+    background: #101820FF;
+    color: #fff; }
+    .kontakt form button:hover {
+      cursor: pointer;
+      background: #F2AA4CFF;
+      color: #101820FF;
+      transition: 0.3s ease; }
+
+/*# sourceMappingURL=style.css.map */
