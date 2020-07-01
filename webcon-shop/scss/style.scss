@@ -1,0 +1,412 @@
+/*************************
+varaibles
+*************************/
+$blue: #4831d4;
+$green: #ccf381;
+$lightgray: #f7f7f7;
+$gray: #333;
+$white: #fff;
+$transition: .3s ease;
+$font: 16px;
+$fontFamily: 'Roboto', sans-serif;
+$padding: 100px 0;
+$boxShadow: 0 0 10px #b7b6b6;
+$textShadow: 0 0 2px #333;
+/*************************
+mixins
+*************************/
+@mixin btn {
+    width: 300px;
+    padding: 20px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    background: $green;
+    border: none;
+    color: $gray;
+    font-size: 1.1rem;
+}
+@mixin btn-hover {
+    cursor: pointer;
+    background: $blue;
+    color: $white;
+    transition: $transition;
+}
+/*************************
+basic styles
+*************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $font;
+    color: $gray;
+    line-height: 1.6;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: 900;
+}
+a {
+    transition: $transition;
+    text-decoration: none;
+    color: $gray;
+    &:hover {
+        color: $green;
+    }
+}
+ul {
+    list-style: none;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.headings {
+    font-size: 3rem;
+    text-align: center;
+    @media(max-width: 768px) {
+        font-size: 2rem;
+    }
+}
+.headings::after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 200px;
+    margin: 20px auto 40px auto;
+    background: $green;
+}
+/*** headers ***/
+.headers {
+    background: $lightgray;
+    padding: 50px;
+    text-align: center;
+    h2 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-weight: 300;
+    }
+}
+/*************************
+topbar
+*************************/
+.topbar {
+    background: $lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 50px;
+    @media(max-width: 768px) {
+        display: none;
+    }
+    a {
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+/*************************
+nav
+*************************/
+nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid $green;
+    padding: 15px 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
+    .logo {
+        flex: 3;
+        color: $gray;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        span {
+            color: $green;
+            font-weight: 700;
+            font-style: italic;
+            text-shadow: $textShadow;
+        }
+    }
+    ul {
+        flex: 6;
+        display: flex;
+        justify-content: space-evenly;
+        li {
+            @media(max-width: 768px) {
+                margin: 5px 10px;
+            }
+        }
+    }
+    .icons {
+        flex: 3;
+        display: flex;
+        justify-content: flex-end;
+        a {
+            margin-left: 20px;
+            @media(max-width: 768px) {
+                margin: 10px;
+            }
+        }
+    }
+}
+/*************************
+footer
+*************************/
+footer {
+    padding: $padding;
+    background: $blue;
+    color: $white;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        .col {
+            flex: 1;
+            @media(max-width: 768px) {
+                flex: 0 0 100%;
+                margin-bottom: 40px;
+            }
+            h3 {
+                font-size: 1.7rem;
+                padding-bottom: 30px;
+            }
+            ul {
+                line-height: 2;
+                a {
+                    color: $green;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            input[type="email"] {
+                padding: 12px;
+            }
+            input[type="submit"] {
+                padding: 8px;
+                background: $green;
+                border: none;
+                position: relative;
+                left: -20px;
+            }
+        }
+    }
+}
+/*************************
+bootombar
+*************************/
+.bottom-bar {
+    @extend .topbar;
+    background: $green;
+    a {
+        margin-left: 20px;
+    }
+}
+/*************************
+H O M E    P A G E
+*************************/
+/*** header ***/
+header {
+    background-image: url(../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    @media(max-width: 768px) {
+        height: 80vh;
+    }
+    h4 {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+    }
+    h2 {
+        font-size: 4rem;
+        line-height: 1.1;
+        color: $green;
+        letter-spacing: 2px;
+        span {
+            color: $white;
+        }
+    }
+    button {
+        @include btn;
+        &:hover {
+            @include btn-hover;
+        }
+    }
+}
+/*** featuredProducts ***/
+.featuredProducts {
+    padding: $padding;
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .col {
+            flex: 0 0 31%;
+            box-shadow: $boxShadow;
+            @media(max-width: 768px) {
+                flex: 0 0 100%;
+                margin-bottom: 40px;
+            }
+            img {
+                width: 100%;
+            }
+            h3 {
+                font-size: 1.8rem;
+                padding-left: 20px;
+            }
+            .price {
+                padding: 20px;
+                display: flex;
+                p:first-child {
+                    margin-right: 30px;
+                    text-decoration: line-through;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+/*************************
+S H O P    P A G E
+*************************/
+/*** security ***/
+.security {
+    padding: $padding;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .col {
+        flex: 0 0 23%;
+        @media(max-width: 768px) {
+            flex: 0 0 100%;
+            margin-bottom: 40px;
+        }
+        text-align: center;
+        border: 1px solid $gray;
+        box-shadow: $boxShadow;
+        padding: 30px;
+        i {
+            color: $green;
+            text-shadow: $textShadow;
+            font-size: 2rem;
+        }
+        h3 {
+            padding: 10px 0;
+            font-size: 1.5rem;
+        }
+    }
+}
+/*** offer ***/
+.offer {
+    background-image: url(../img/shop.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    border-top: 2px solid $green;
+    .container {
+        width: 70%;
+        @media(max-width: 768px) {
+            width: 80%;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        height: 80vh;
+        h4 {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 6rem;
+            @media(max-width: 768px) {
+                font-size: 3rem;
+                text-align: left;
+            }
+        }
+        button {
+            @include btn;
+            margin-bottom: 20px;
+            &:hover {
+                @include btn-hover;
+            }
+        }
+    }
+}
+/*************************
+P R O D U C T    P A G E
+*************************/
+/*** product ***/
+.product {
+    padding: $padding;
+    display: flex;
+    flex-wrap: wrap;
+    article {
+        flex: 1;
+        @media(max-width: 768px) {
+            flex: 0 0 100%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    aside {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 30px;
+        @media(max-width: 768px) {
+            flex: 0 0 100%;
+            padding-left: 0px;
+        }
+        h3 {
+            font-size: 3rem;
+        }
+        h4 {
+            font-size: 1.8rem;
+            color: $green;
+            text-shadow: $textShadow;
+        }
+        p {
+            padding: 10px 0;
+            span {
+                color: $blue;
+            }
+        }
+        hr {
+            margin: 10px 0;
+        }
+        button {
+            @include btn;
+            margin-bottom: 20px;
+            &:hover {
+                @include btn-hover;
+            }
+        }
+        i {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: $lightgray;
+            border: 1px solid $gray;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            text-align: center;
+        }
+    }
+}
